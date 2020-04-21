@@ -20,7 +20,8 @@
 				"DEF":1053,
 				"INT":1002,
 				"SPEED":1577
-			}
+			},
+			"special_talent":""
 		},
 		"p2":{
 			"rider":{
@@ -41,7 +42,8 @@
 				"DEF":1059,
 				"INT":1029,
 				"SPEED":1039
-			}
+			},
+			"special_talent":""
 		},
 		"p3":{
 			"rider":{
@@ -62,7 +64,8 @@
 				"DEF":982,
 				"INT":1075,
 				"SPEED":1378
-			}
+			},
+			"special_talent":""
 		}
 	}
 }
