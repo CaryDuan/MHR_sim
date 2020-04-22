@@ -1,79 +1,93 @@
 {
 	"version":"0.1",
-	"riders":{
-		"女主":{
+	"otomons":{
+		"奇猿狐":{
 			"skills":{
-				"火系45sp90*3威力":{
-					"level_limit":10,
-					"rank_limit":5,
-					"attribute":"火",
-					"power":90.0,
+				"物理35sp55*3威力":{
+					"level_limit":0,
+					"rank_limit":1,
+					"attribute":"无",
+					"power":55.0,
 					"hit":3,
+					"sp":35,
+					"AOE":"false",
+					"random_hit":"true",
+					"get_buff":[],
+					"give_debuff":[],
+					"critical_bonus":0.0
+				},
+				"水系45sp225威力":{
+					"level_limit":10,
+					"rank_limit":1,
+					"attribute":"水",
+					"power":225.0,
+					"hit":1,
 					"sp":45,
 					"AOE":"false",
-					"random_hit":"true",
+					"random_hit":"false",
 					"get_buff":[],
 					"give_debuff":[],
 					"critical_bonus":0.0
 				},
-				"火系60sp135*3威力":{
-					"level_limit":60,
-					"rank_limit":5,
-					"attribute":"火",
-					"power":135.0,
-					"hit":3,
-					"sp":60,
-					"AOE":"false",
-					"random_hit":"true",
-					"get_buff":[],
-					"give_debuff":[],
-					"critical_bonus":0.0
-				},
-				"降防40sp":{
+				"加攻15sp自身限定":{
 					"level_limit":30,
-					"rank_limit":5,
+					"rank_limit":3,
 					"attribute":"无",
 					"power":0,
+					"hit":1,
+					"sp":15,
+					"AOE":"false",
+					"random_hit":"false",
+					"get_buff":[
+						{
+							"name":"攻",
+							"prob":1.1,
+							"effect":1,
+							"self_limit":"true"
+						}
+					],
+					"give_debuff":[],
+					"critical_bonus":0.0
+				},
+				"物理40sp155威力":{
+					"level_limit":67,
+					"rank_limit":5,
+					"attribute":"水",
+					"power":155.0,
 					"hit":1,
 					"sp":40,
 					"AOE":"false",
 					"random_hit":"false",
 					"get_buff":[],
-					"give_debuff":[
-						{
-							"name":"防",
-							"prob":0.6,
-							"effect":-1
-						}
-					],
-					"critical_bonus":0.0
+					"give_debuff":[],
+					"critical_bonus":0.2
 				},
-				"降防55sp全体":{
-					"level_limit":67,
-					"rank_limit":5,
-					"attribute":"无",
-					"power":0,
-					"hit":1,
-					"sp":55,
-					"AOE":"true",
-					"random_hit":"false",
+				"水系60sp95*3威力":{
+					"level_limit":0,
+					"rank_limit":1,
+					"attribute":"水",
+					"power":95,
+					"hit":3,
+					"sp":60,
+					"AOE":"false",
+					"random_hit":"true",
 					"get_buff":[],
 					"give_debuff":[
 						{	
-							"name":"防",
-							"prob":0.65,
-							"effect":-1
+							"name":"水",
+							"prob":0.1,
+							"effect":1
 						}
 					],
 					"critical_bonus":0.0
 				},
-				"火系30sp120威力":{
-					"level_limit":0,
-					"rank_limit":3,
-					"attribute":"火",
-					"power":120.0,
+				"水系90sp520威力":{
+					"level_limit":60,
+					"rank_limit":5,
+					"attribute":"水",
+					"power":520.0,
 					"hit":1,
-					"sp":30,
+					"sp":90,
 					"AOE":"false",
 					"random_hit":"false",
 					"get_buff":[],
@@ -83,8 +97,8 @@
 			},
 			"talent":[
 				{
-					"name":"追撃・毒",
-					"type":"歧视伤害增加",
+					"name":"氷雪耐性【竜】",
+					"type":"异常耐性增加",
 					"condition":{
 						"otomon_suit_check":"false",
 						"turn_start":1,
@@ -96,13 +110,32 @@
 						"HP_upper_bound":1.1,
 						"boss_in_rage":""
 					},
-					"buff_type":"毒",
+					"buff_type":"冰异常抗性",
 					"total_level_num":4,
 					"level_condition":[0,20,40,55],
-					"buff_value":[1.04,1.06,1.08,1.1]
+					"buff_value":[0.08,0.2,0.33,0.5]
 				},
 				{
-					"name":"攻撃強化【安】・火",
+					"name":"攻の型【成】",
+					"type":"攻击增加",
+					"condition":{
+						"otomon_suit_check":"false",
+						"turn_start":5,
+						"turn_end":-1,
+						"prob_level_num":1,
+						"prob_level":[0],
+						"prob":[1.1],
+						"HP_lower_bound":-1,
+						"HP_upper_bound":1.1,
+						"boss_in_rage":""
+					},
+					"buff_type":"全",
+					"total_level_num":5,
+					"level_condition":[0,5,25,45,65],
+					"buff_value":[0.0,0.03,0.05,0.06,0.08]
+				},
+				{
+					"name":"攻撃強化【安】・水",
 					"type":"特定属性伤害增加",
 					"condition":{
 						"otomon_suit_check":"false",
@@ -115,32 +148,13 @@
 						"HP_upper_bound":1.1,
 						"boss_in_rage":""
 					},
-					"buff_type":"火",
+					"buff_type":"水",
 					"total_level_num":5,
-					"level_condition":[0,5,25,45,65],
+					"level_condition":[0,15,35,50,70],
 					"buff_value":[0.0,0.04,0.06,0.08,0.1]
 				},
 				{
-					"name":"攻性高揚【行】",
-					"type":"触发增益",
-					"condition":{
-						"otomon_suit_check":"false",
-						"turn_start":3,
-						"turn_end":-1,
-						"prob_level_num":5,
-						"prob_level":[0,15,35,50,70],
-						"prob":[0.0,0.03,0.05,0.07,0.1],
-						"HP_lower_bound":-1,
-						"HP_upper_bound":1.1,
-						"boss_in_rage":""
-					},
-					"buff_type":"攻",
-					"total_level_num":0,
-					"level_condition":[],
-					"buff_value":[]
-				},
-				{
-					"name":"タッグ 攻撃強化・火",
+					"name":"タッグ 攻撃強化・水",
 					"type":"特定属性伤害增加",
 					"condition":{
 						"otomon_suit_check":"true",
@@ -153,26 +167,7 @@
 						"HP_upper_bound":1.1,
 						"boss_in_rage":""
 					},
-					"buff_type":"火",
-					"total_level_num":1,
-					"level_condition":[7],
-					"buff_value":[0.05]
-				},
-				{
-					"name":"タッグ 防御強化・水",
-					"type":"特定属性防御增加",
-					"condition":{
-						"otomon_suit_check":"true",
-						"turn_start":1,
-						"turn_end":-1,
-						"prob_level_num":1,
-						"prob_level":[0],
-						"prob":[1.1],
-						"HP_lower_bound":-1,
-						"HP_upper_bound":1.1,
-						"boss_in_rage":""
-					},
-					"buff_type":"抗水",
+					"buff_type":"水",
 					"total_level_num":1,
 					"level_condition":[0],
 					"buff_value":[0.05]
